@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :storefronts, shallow: true do
-    resources :widgets
+  resources :storefronts do
+    resources :widgets, only: [:index, :create, :new]
   end
+
+  resources :widgets, except: [:index, :create, :new]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
