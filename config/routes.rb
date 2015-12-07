@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :storefronts do
+  resources :storefronts, shallow: true do
     resources :widgets
   end
 
