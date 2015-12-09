@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   get 'widgets' => 'widgets#index'
-  get 'widgets/new'
-  get 'widgets/create'
-  get 'widgets/show'
+  post 'widgets' => 'widgets#create'
+  get 'widgets/new', as: 'new_widget'
+  get 'widgets/:id' => 'widgets#show', as: 'widget'
 
   get 'pages' => 'pages#index'
-
   root to: 'widgets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
